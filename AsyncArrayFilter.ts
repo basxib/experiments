@@ -7,7 +7,7 @@
    console.log(passed);
 
 
-  async function Check( element: number) {
+   function Check( element: number) {
     if(element > 10)
       return true;
       else return false;
