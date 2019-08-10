@@ -7,4 +7,5 @@ package
 # do not include the local environment files
 *.js
 *.map
+*bin/
 
