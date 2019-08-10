@@ -11,6 +11,8 @@ namespace CSharp
             {
             if(array[i] > array[i-1] && asc)
                 continue;
+            else if(array[i] > array[i-1] && !asc && i >1)
+                return "no";
             else if(array[i] < array[i-1] && asc && i> 1)
                 return "no";
             else if(array[i] < array[i-1])
@@ -21,7 +23,7 @@ namespace CSharp
         
         static void Main(string[] args)
         {
-            var s = IsSortedAndHow(new [] { 15, 7, 3, -8 });
+            var s = IsSortedAndHow(new [] { 2, 1 });
             Console.Write(s);
         }
     }
