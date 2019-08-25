@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 public class Rover{
-    public Rover( Plateau basePlateau, int initialPositionX,int initialPositionY, Orientation initialOrientation)
+    public Rover( Plateau basePlateau, int initialPositionX,int initialPositionY, Utils.Orientation initialOrientation)
     {
         PositionX = initialPositionX;
         PositionY = initialPositionY;
@@ -15,7 +15,7 @@ public class Rover{
     public int PositionX{get; set;}
     public int PositionY{get; set;}
     public Plateau BasePlateau {get;} 
-    public Orientation CurrentOrientation{get; set;}
+    public Utils.Orientation CurrentOrientation{get; set;}
     public void ExecuteSequence(string sequence)
     {
         sequence= sequence.ToUpper();
@@ -38,16 +38,28 @@ public class Rover{
     {
         switch(CurrentOrientation)
         {
-            case Orientation.East:
+            case Utils.Orientation.East:
+            if(PositionX + 1 > BasePlateau.Width)
+                throw new Exception("Not allowed movement on rover with ID: "+ this.ID);
+            else
                 PositionX++;
-                break;
-            case Orientation.West:
+            break;
+            case Utils.Orientation.West:
+            if(PositionX - 1 < 0)
+                throw new Exception("Not allowed movement on rover with ID: "+ this.ID);
+            else
                 PositionX--;
-                break;
-            case Orientation.North:
+            break;
+            case Utils.Orientation.North:
+            if(PositionY -1 < 0)
+                throw new Exception("Not allowed movement on rover with ID: "+ this.ID);
+            else
                 PositionY--;
                 break;
-            case Orientation.South:
+            case Utils.Orientation.South:
+            if(PositionY + 1 > BasePlateau.Length)
+                throw new Exception("Not allowed movement on rover with ID: "+ this.ID);
+            else
                 PositionY++;
                 break;
             default: throw new Exception("Invalid orientation on rover with ID:" + this.ID);
@@ -57,7 +69,10 @@ public class Rover{
     }
     public void Rotate(Char direction)
     {
-        CurrentOrientation = (Orientation)((int)CurrentOrientation % 5) + Direction.Parse(direction);
+        if(CurrentOrientation == Utils.Orientation.North && Utils.ParseDirection(direction) == Utils.Direction.Left)
+            CurrentOrientation = Utils.Orientation.West;
+        else
+            CurrentOrientation = (Utils.Orientation)((int)CurrentOrientation % 5) + (int)Utils.ParseDirection(direction);
     }
 } 
 
