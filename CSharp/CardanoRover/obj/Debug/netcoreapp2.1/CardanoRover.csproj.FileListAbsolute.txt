@@ -1,0 +1,11 @@
+C:\Code\experiments\CSharp\CardanoRover\bin\Debug\netcoreapp2.1\CardanoRover.deps.json
+C:\Code\experiments\CSharp\CardanoRover\bin\Debug\netcoreapp2.1\CardanoRover.runtimeconfig.json
+C:\Code\experiments\CSharp\CardanoRover\bin\Debug\netcoreapp2.1\CardanoRover.runtimeconfig.dev.json
+c:\Code\experiments\CSharp\CardanoRover\bin\Debug\netcoreapp2.1\CardanoRover.dll
+c:\Code\experiments\CSharp\CardanoRover\bin\Debug\netcoreapp2.1\CardanoRover.pdb
+c:\Code\experiments\CSharp\CardanoRover\obj\Debug\netcoreapp2.1\CardanoRover.csprojAssemblyReference.cache
+c:\Code\experiments\CSharp\CardanoRover\obj\Debug\netcoreapp2.1\CardanoRover.csproj.CoreCompileInputs.cache
+c:\Code\experiments\CSharp\CardanoRover\obj\Debug\netcoreapp2.1\CardanoRover.AssemblyInfoInputs.cache
+c:\Code\experiments\CSharp\CardanoRover\obj\Debug\netcoreapp2.1\CardanoRover.AssemblyInfo.cs
+c:\Code\experiments\CSharp\CardanoRover\obj\Debug\netcoreapp2.1\CardanoRover.dll
+c:\Code\experiments\CSharp\CardanoRover\obj\Debug\netcoreapp2.1\CardanoRover.pdb
