@@ -15,9 +15,13 @@ namespace CardanoRover
         private static List<Rover> DeployedRovers = new List<Rover>();
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Welcome to cardano rover platform management console");
             Console.WriteLine("Follow the instructions to initialize the platform");
+            Console.WriteLine("......");
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Step 1: Type the plateau dimensions: example: 5 5");
+            Console.ForegroundColor = ConsoleColor.White;
             try
             {
                 
@@ -38,7 +42,7 @@ namespace CardanoRover
                     var movementSequence = cmd;
                     rover.ExecuteSequence(movementSequence);
                     DeployedRovers.Add(rover);
-                    Console.WriteLine("Press enter to add another rover, or enter Q if you're done.");
+                    Console.WriteLine("Press enter to add another rover, enter 'Q' if you're done.");
                     cmd = Console.ReadLine();
                 }while(cmd!= "Q");
             }
@@ -48,6 +52,20 @@ namespace CardanoRover
             }
             Console.WriteLine("...................");
             printRovers();
+            Console.WriteLine("...................");
+            string cmdText = "";
+            do{
+                Console.WriteLine("Enter the index of the rover and a sequence command to move it, example: 0 MMR");
+                cmdText = Console.ReadLine().Trim();
+                var x = cmdText.Split();
+                var roverIndex = int.Parse(x[0]);
+                if(roverIndex < DeployedRovers.Count)
+                    DeployedRovers[roverIndex].ExecuteSequence(x[1]);
+                else 
+                    Console.WriteLine("Wrong input, There's no rover with this index");
+                Console.WriteLine("Press enter to move a rover, enter 'Q' to quite.");
+                cmdText = Console.ReadLine();
+            }while(cmdText!= "Q");
         }
         public static void printRovers()
         {
