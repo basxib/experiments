@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "CommandLineParser/2.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {}
+        }
+      },
       "Microsoft.CodeCoverage/16.2.0": {
         "type": "package",
         "compile": {
@@ -1636,6 +1645,25 @@
     }
   },
   "libraries": {
+    "CommandLineParser/2.6.0": {
+      "sha512": "Cbohgo2gqNwO8+Ca672AZPTQyaaIPti5QktrqBJvzPU/KrvvFFpSNrHQN1fIOhZiwHzhtBF0YuKVBePZ4VzgkA==",
+      "type": "package",
+      "path": "commandlineparser/2.6.0",
+      "files": [
+        ".signature.p7s",
+        "README.md",
+        "commandlineparser.2.6.0.nupkg.sha512",
+        "commandlineparser.nuspec",
+        "lib/net40/CommandLine.dll",
+        "lib/net40/CommandLine.xml",
+        "lib/net45/CommandLine.dll",
+        "lib/net45/CommandLine.xml",
+        "lib/net461/CommandLine.dll",
+        "lib/net461/CommandLine.xml",
+        "lib/netstandard2.0/CommandLine.dll",
+        "lib/netstandard2.0/CommandLine.xml"
+      ]
+    },
     "Microsoft.CodeCoverage/16.2.0": {
       "sha512": "kfHUP8A4og9TZ9mqtmkQXcdRTfvnSSYLUnicCadavMa9wADuDH9DIjHUzAnpm/W4Y91iidgTNC902drSOmUWJQ==",
       "type": "package",
@@ -5622,6 +5650,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "CommandLineParser >= 2.6.0",
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "xunit >= 2.4.1",
@@ -5635,11 +5664,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Code\\experiments\\CSharp\\CardanoRover\\CardanoRover.csproj",
+      "projectUniqueName": "C:\\Code\\experiments\\CSharp\\CardanoRover\\CardanoRover.csproj",
       "projectName": "CardanoRover",
-      "projectPath": "c:\\Code\\experiments\\CSharp\\CardanoRover\\CardanoRover.csproj",
+      "projectPath": "C:\\Code\\experiments\\CSharp\\CardanoRover\\CardanoRover.csproj",
       "packagesPath": "C:\\Users\\BalKathib\\.nuget\\packages\\",
-      "outputPath": "c:\\Code\\experiments\\CSharp\\CardanoRover\\obj\\",
+      "outputPath": "C:\\Code\\experiments\\CSharp\\CardanoRover\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5669,6 +5698,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "CommandLineParser": {
+            "target": "Package",
+            "version": "[2.6.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.2.0, )"
