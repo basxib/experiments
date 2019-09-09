@@ -47,6 +47,7 @@ namespace CSharp
             var array2 =  new string(array);
             if(Char.IsUpper(array[0]))
             {
+                var x = 'a' - 'b';
                 alpha2 = alpha2.ToUpper();
                 array2= array2.ToUpper();
             }
@@ -59,11 +60,13 @@ namespace CSharp
             }
             return ' ';
         }
-         
+
+         public static int GetUnique(IEnumerable<int> numbers) => numbers.GroupBy(y=>y).First(x=>x.Count() == 1).First();
             
         static void Main(string[] args)
         {
-            var s = FindMissingLetter(new [] { 'a','b','c','d','f' });
+
+            var s = GetUnique(new [] {1,1,3,1});
             Console.WriteLine(s);
             Console.WriteLine(TrailingZeros(25));
         }
