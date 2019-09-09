@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 namespace CSharp
 {
     class Program
@@ -40,24 +41,29 @@ namespace CSharp
             }
             return count;
         }
-          public static string Well(string[] x)
+        public static char FindMissingLetter(char[] array)
+        {
+            string alpha2 = "abcdefghijklmnopqrstuvwxyz";
+            var array2 =  new string(array);
+            if(Char.IsUpper(array[0]))
             {
-                var count = x.Where(x=>x == "good").Count();
-                if(count == 0)
-                    return "Fail!";
-                else if(count <= 2)
-                    return "Publish!";
-                else
-                    return "I smell a series!";
+                alpha2 = alpha2.ToUpper();
+                array2= array2.ToUpper();
             }
-             public static int FindShort(string s)
+            var firstCharIndex = alpha2.IndexOf(array2[0]);
+            var subAlpha = alpha2.Substring(firstCharIndex,array2.Length);
+            for(int i = 0; i< alpha2.Length; i++)
             {
-                return s.Split().OrderBy(x=>x.Length).First().Length;
+                if(subAlpha[i]!=array2[i])
+                    return subAlpha[i];
             }
+            return ' ';
+        }
+         
             
         static void Main(string[] args)
         {
-            var s = IsSortedAndHow(new [] { 2, 1 });
+            var s = FindMissingLetter(new [] { 'a','b','c','d','f' });
             Console.WriteLine(s);
             Console.WriteLine(TrailingZeros(25));
         }
