@@ -9,3 +9,14 @@ C:\Code\experiments\CSharp\obj\Debug\netcoreapp2.1\CSharp.AssemblyInfoInputs.cac
 C:\Code\experiments\CSharp\obj\Debug\netcoreapp2.1\CSharp.AssemblyInfo.cs
 C:\Code\experiments\CSharp\obj\Debug\netcoreapp2.1\CSharp.dll
 C:\Code\experiments\CSharp\obj\Debug\netcoreapp2.1\CSharp.pdb
+C:\Code\experiments\CSharp\Katas\bin\Debug\netcoreapp2.1\CSharp.deps.json
+C:\Code\experiments\CSharp\Katas\bin\Debug\netcoreapp2.1\CSharp.runtimeconfig.json
+C:\Code\experiments\CSharp\Katas\bin\Debug\netcoreapp2.1\CSharp.runtimeconfig.dev.json
+c:\Code\experiments\CSharp\Katas\bin\Debug\netcoreapp2.1\CSharp.dll
+c:\Code\experiments\CSharp\Katas\bin\Debug\netcoreapp2.1\CSharp.pdb
+c:\Code\experiments\CSharp\Katas\obj\Debug\netcoreapp2.1\CSharp.csprojAssemblyReference.cache
+c:\Code\experiments\CSharp\Katas\obj\Debug\netcoreapp2.1\CSharp.csproj.CoreCompileInputs.cache
+c:\Code\experiments\CSharp\Katas\obj\Debug\netcoreapp2.1\CSharp.AssemblyInfoInputs.cache
+c:\Code\experiments\CSharp\Katas\obj\Debug\netcoreapp2.1\CSharp.AssemblyInfo.cs
+c:\Code\experiments\CSharp\Katas\obj\Debug\netcoreapp2.1\CSharp.dll
+c:\Code\experiments\CSharp\Katas\obj\Debug\netcoreapp2.1\CSharp.pdb

@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Code\\experiments\\CSharp\\Katas\\CSharp.csproj",
-      "projectName": "CSharp",
-      "projectPath": "c:\\Code\\experiments\\CSharp\\Katas\\CSharp.csproj",
+      "projectUniqueName": "C:\\Code\\experiments\\CSharp\\Uber\\Uber.csproj",
+      "projectName": "Uber",
+      "projectPath": "C:\\Code\\experiments\\CSharp\\Uber\\Uber.csproj",
       "packagesPath": "C:\\Users\\BalKathib\\.nuget\\packages\\",
-      "outputPath": "c:\\Code\\experiments\\CSharp\\Katas\\obj\\",
+      "outputPath": "C:\\Code\\experiments\\CSharp\\Uber\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

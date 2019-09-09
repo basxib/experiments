@@ -40,6 +40,21 @@ namespace CSharp
             }
             return count;
         }
+          public static string Well(string[] x)
+            {
+                var count = x.Where(x=>x == "good").Count();
+                if(count == 0)
+                    return "Fail!";
+                else if(count <= 2)
+                    return "Publish!";
+                else
+                    return "I smell a series!";
+            }
+             public static int FindShort(string s)
+            {
+                return s.Split().OrderBy(x=>x.Length).First().Length;
+            }
+            
         static void Main(string[] args)
         {
             var s = IsSortedAndHow(new [] { 2, 1 });
