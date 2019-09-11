@@ -83,9 +83,27 @@ namespace CSharp
                 res.Add(array[marker]);
             return FoldArray(res.ToArray(), runs-1);
         }
+        public static string formatDuration(int seconds)
+        {
+            if (seconds == 0) return "now";
+            decimal yrs = (((((decimal)seconds / (decimal)60.00) / (decimal)60.000) / (decimal)24.000) / (decimal)365.000);
+            var days = (yrs % 1) * 365;
+            var hrs = (days % 1) * 24;
+            var min = (hrs % 1) * 60;
+            decimal sec = 0M;
+            if((min % 1) >= 0.99M)
+            {
+                min++;
+            }
+            else
+                sec = Math.Round((min % 1) * 60);
+            return ((Math.Floor(yrs)!= 0?Math.Floor(yrs)+ ((yrs >= 2)?" years, ":" year, "):"") + (Math.Floor(days)!=0? Math.Floor(days)+ ((days>= 2)?" days, ":" day, "):"")+(Math.Floor(hrs)!=0? Math.Floor(hrs)+ (hrs>=2?" hours, ":" hour, "):"")+(Math.Floor(min)!=0? Math.Floor(min)+ (min >= 2? " minutes":" minute"):"")+(min >= 1 && sec>=1?" and ":"")+(Math.Floor(sec)!=0? Math.Floor(sec)+ (sec>=2?" seconds":" second"):"")); 
+    //Enter Code here
+        }
+        
         static void Main(string[] args)
         {
-            FoldArray(new int[] { 1, 2, 3, 4, 5 }, 1);
+            formatDuration(120);
 
             Console.WriteLine(TrailingZeros(25));
         }
