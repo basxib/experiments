@@ -61,13 +61,32 @@ namespace CSharp
             return ' ';
         }
 
+
          public static int GetUnique(IEnumerable<int> numbers) => numbers.GroupBy(y=>y).First(x=>x.Count() == 1).First();
             
+        public static int[] FoldArray(int[] array, int runs)
+         {
+             if(array.Length == 1 || runs == 0)
+                return array;
+            var marker = (array.Length % 2) == 0?array.Length/2:(array.Length - 1) / 2;
+            
+
+            int j = array.Length-1;
+            List<int> res = new List<int>();
+            for(int i=0; i< marker; i++)
+            {
+                res.Add(array[i]+array[j]);
+                j--;
+
+            }
+            if(array.Length% 2 != 0)
+                res.Add(array[marker]);
+            return FoldArray(res.ToArray(), runs-1);
+        }
         static void Main(string[] args)
         {
+            FoldArray(new int[] { 1, 2, 3, 4, 5 }, 1);
 
-            var s = GetUnique(new [] {1,1,3,1});
-            Console.WriteLine(s);
             Console.WriteLine(TrailingZeros(25));
         }
     }
