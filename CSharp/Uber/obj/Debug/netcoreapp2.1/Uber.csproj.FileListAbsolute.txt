@@ -1,0 +1,11 @@
+C:\Code\experiments\CSharp\Uber\bin\Debug\netcoreapp2.1\Uber.deps.json
+C:\Code\experiments\CSharp\Uber\bin\Debug\netcoreapp2.1\Uber.runtimeconfig.json
+C:\Code\experiments\CSharp\Uber\bin\Debug\netcoreapp2.1\Uber.runtimeconfig.dev.json
+c:\Code\experiments\CSharp\Uber\bin\Debug\netcoreapp2.1\Uber.dll
+c:\Code\experiments\CSharp\Uber\bin\Debug\netcoreapp2.1\Uber.pdb
+c:\Code\experiments\CSharp\Uber\obj\Debug\netcoreapp2.1\Uber.csprojAssemblyReference.cache
+c:\Code\experiments\CSharp\Uber\obj\Debug\netcoreapp2.1\Uber.csproj.CoreCompileInputs.cache
+c:\Code\experiments\CSharp\Uber\obj\Debug\netcoreapp2.1\Uber.AssemblyInfoInputs.cache
+c:\Code\experiments\CSharp\Uber\obj\Debug\netcoreapp2.1\Uber.AssemblyInfo.cs
+c:\Code\experiments\CSharp\Uber\obj\Debug\netcoreapp2.1\Uber.dll
+c:\Code\experiments\CSharp\Uber\obj\Debug\netcoreapp2.1\Uber.pdb

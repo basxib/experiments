@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.Immutable;
+using System.Threading.Tasks;
 namespace CSharp
 {
     class Program
@@ -100,10 +102,74 @@ namespace CSharp
             return ((Math.Floor(yrs)!= 0?Math.Floor(yrs)+ ((yrs >= 2)?" years, ":" year, "):"") + (Math.Floor(days)!=0? Math.Floor(days)+ ((days>= 2)?" days, ":" day, "):"")+(Math.Floor(hrs)!=0? Math.Floor(hrs)+ (hrs>=2?" hours, ":" hour, "):"")+(Math.Floor(min)!=0? Math.Floor(min)+ (min >= 2? " minutes":" minute"):"")+(min >= 1 && sec>=1?" and ":"")+(Math.Floor(sec)!=0? Math.Floor(sec)+ (sec>=2?" seconds":" second"):"")); 
     //Enter Code here
         }
-        
+        public static void SMSFormat(string msg)
+        {
+            if(msg == null || msg.Length == 0)
+                throw new ArgumentNullException();
+            var arr = new List<string>();
+            while(msg!= "")
+            {
+                if(msg.Length < 10)
+                {
+                    arr.Add(msg);
+                    break;
+                }
+                var cutMarker = msg.Substring(0, 10).LastIndexOf(' ');
+                arr.Add(msg.Substring(0, cutMarker));
+                msg = string.Concat(msg.Skip(cutMarker));
+            }
+            for(var i=0;i< arr.Count(); i++)
+            {
+                Console.WriteLine("Message "+(i+1)+"/"+arr.Count()+": "+arr[i]);
+            }
+        }
+        public static string Extract(int[] args)
+        {
+            /*
+            1,3,4,5,6,7, 9,12,13,14,15
+            x,(x,y,y,y,y)x,(y, y, y, y)
+             */
+
+            bool inASequence = false;
+            int SequenceStart = -1;
+            var result = new List<string>();
+            for(var i=1; i<args.Length; i++)
+            {
+                if(args[i] == args[i-1]+1 && !inASequence)//detect sequence start
+                {
+                    inASequence = true;
+                    SequenceStart = i-1;
+                }
+                else if(inASequence && (args[i] != args[i-1]+1 || i+1 == args.Length ) )//detect sequence end
+                {
+                    inASequence = false;
+                    //extract range
+                    if(i - SequenceStart >= 2)//this is a range
+                    {
+                        result.Add(args[SequenceStart]+"-"+args[i-1]+",");
+                    }
+                    else//not a range, just add the elements
+                    {
+                        for(int x=SequenceStart; x< i;x++)
+                            result.Add(args[x].ToString()+",");
+
+                    }
+                }
+                else if(!inASequence)//no sequence logic
+                {
+                    result.Add(args[i-1].ToString()+",");
+                }
+
+
+
+            }
+            return string.Concat(result);  //TODO
+        }
         static void Main(string[] args)
         {
-            formatDuration(120);
+            var s = Extract(new[]{1,3,4,5,6, 7, 9, 12, 14});
+            
+            Console.WriteLine();
 
             Console.WriteLine(TrailingZeros(25));
         }
