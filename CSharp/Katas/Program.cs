@@ -165,6 +165,16 @@ namespace CSharp
             }
             return string.Concat(result);  //TODO
         }
+        public static int FindParityOutlier(int[] integers)
+        {
+            var parity = integers.Where(x=>x%2 == 0).Count(); 
+            var outlier = 0;
+            if( parity == 1)
+                outlier = integers.Where(x=>x%2==0).FirstOrDefault();
+            else
+                outlier = integers.Where(x=>x%2!= 0).FirstOrDefault();
+            return outlier;
+        }
         static void Main(string[] args)
         {
             var s = Extract(new[]{1,3,4,5,6, 7, 9, 12, 14});
